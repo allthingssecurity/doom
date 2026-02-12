@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neon Doom Runner</title>
+    <style>
+      :root {
+        --bg0: #06070f;
+        --bg1: #0d1020;
+        --neon-cyan: #35f3ff;
+        --neon-pink: #ff2a92;
+        --neon-lime: #cbff4d;
+      }
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        background: radial-gradient(circle at 30% 20%, #1b244f 0%, var(--bg0) 55%, #040409 100%);
+        color: #e8f3ff;
+        font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+        overflow: hidden;
+      }
+      #wrap {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+      }
+      #game {
+        width: min(96vw, 1280px);
+        height: min(92vh, 720px);
+        border: 2px solid #1ce3ff66;
+        box-shadow: 0 0 28px #2be7ff55, inset 0 0 32px #ff2a9222;
+        image-rendering: auto;
+        background: #000;
+      }
+      #overlay {
+        position: fixed;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        pointer-events: none;
+      }
+      #panel {
+        pointer-events: auto;
+        width: min(620px, 92vw);
+        background: linear-gradient(145deg, #0a1022f0, #120e24dd);
+        border: 1px solid #2ef2ff66;
+        box-shadow: 0 0 32px #24e9ff33;
+        border-radius: 14px;
+        padding: 20px;
+      }
+      #panel h1 {
+        margin: 0 0 10px;
+        color: var(--neon-cyan);
+        letter-spacing: 1px;
+      }
+      #panel p {
+        margin: 6px 0;
+      }
+      #start-btn {
+        margin-top: 12px;
+        padding: 10px 16px;
+        border: 1px solid #39eeff;
+        background: linear-gradient(90deg, #0a1e3f, #1f1242);
+        color: white;
+        cursor: pointer;
+      }
+      #panel.hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap"><canvas id="game" width="1280" height="720"></canvas></div>
+    <div id="overlay">
+      <div id="panel">
+        <h1>NEON DOOM RUNNER</h1>
+        <p>Doom-like 2.5D, cyberpunk arena.</p>
+        <p>Move: WASD / Arrows | Turn: Mouse or Q/E | Shoot: Click / Space</p>
+        <p>Fullscreen: F | Restart: R</p>
+        <button id="start-btn">Start Mission</button>
+      </div>
+    </div>
+    <script type="module" src="./game.js"></script>
+  </body>
+</html>

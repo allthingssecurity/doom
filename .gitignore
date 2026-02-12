@@ -1,0 +1,17 @@
+.DS_Store
+Screenshot*.png
+progress.md
+screenshots/
+
+# Local test captures and debug artifacts
+output/*
+!output/imagegen/
+output/imagegen/*
+!output/imagegen/kej_enemy_sheet.png
+!output/imagegen/pappu_enemy_sheet.png
+
+# Local test scripts
+test-actions*.json
+
+# Logs
+*.log
